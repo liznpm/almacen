@@ -1,0 +1,41 @@
+-- Crea la base de datos "sistema" (si aún no existe)
+CREATE DATABASE IF NOT EXISTS sistema;
+
+-- Usa la base de datos "sistema"
+USE sistema;
+
+-- Crea la tabla "productos" en la base de datos "sistema"
+CREATE TABLE IF NOT EXISTS productos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    product_name VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    price DECIMAL(10, 2) NOT NULL,
+    category VARCHAR(100) NOT NULL,
+    cantidad_disponible INT NOT NULL,
+    precio_unitario DECIMAL(10, 2) NOT NULL,
+    fecha DATE NOT NULL,
+    proveedor_id INT NOT NULL
+);
+
+
+CREATE TABLE IF NOT EXISTS proveedores (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(255) NOT NULL,
+    direccion VARCHAR(255) NOT NULL,
+    telefono VARCHAR(20) NOT NULL,
+    email VARCHAR(255) NOT NULL
+);
+
+
+
+CREATE TABLE ventas (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  product_name VARCHAR(255) NOT NULL,
+  description TEXT NOT NULL,
+  price DECIMAL(10, 2) NOT NULL,
+  category VARCHAR(100) NOT NULL,
+  cantidad_disponible INT NOT NULL,
+  precio_unitario DECIMAL(10, 2) NOT NULL,
+  fecha DATE NOT NULL,
+  proveedor_id INT NOT NULL
+);
